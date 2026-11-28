@@ -175,7 +175,7 @@ data class SubtitleStyle(
 
     /** The nearest fine step of the size now, so the stepper starts from what is on screen. */
     val fineSizePercent: Int
-        get() = if (sizePercent > 0) sizePercent else (kotlin.math.round(size.cueScale * 10f).toInt() * 10).coerceIn(SIZE_MIN, SIZE_MAX)
+        get() = if (sizePercent > 0) sizePercent else (kotlin.math.round(size.cueScale * 10f).toInt() * 10).coerceIn(SIZE_MIN, SUBTITLE_SIZE_MAX)
 
     /** `SubtitleView`'s bottom padding as a share of its height. */
     val bottomFraction: Float get() = if (positionPercent >= 0) positionPercent / 100f else position.bottomFraction
@@ -185,7 +185,7 @@ data class SubtitleStyle(
 
     /** The height now as a whole per cent from the bottom, for the stepper. */
     val positionNowPercent: Int
-        get() = if (positionPercent >= 0) positionPercent else kotlin.math.round(position.bottomFraction * 100f).toInt().coerceIn(0, POSITION_MAX)
+        get() = if (positionPercent >= 0) positionPercent else kotlin.math.round(position.bottomFraction * 100f).toInt().coerceIn(0, SUBTITLE_POSITION_MAX)
 
     /** The letters' colour as an opaque ARGB. */
     val colourArgb: Int get() = if (customColour != 0) customColour else colour.argb
@@ -195,11 +195,11 @@ data class SubtitleStyle(
 
     /** One fine step larger or smaller ([direction] 1 or -1), held between 50 and 250 per cent. */
     fun stepSize(direction: Int): SubtitleStyle =
-        copy(sizePercent = (fineSizePercent + direction * SIZE_STEP).coerceIn(SIZE_MIN, SIZE_MAX))
+        copy(sizePercent = (fineSizePercent + direction * SIZE_STEP).coerceIn(SIZE_MIN, SUBTITLE_SIZE_MAX))
 
     /** The bottom line higher ([direction] 1) or lower (-1) by two per cent of the height, held between 0 and 30. */
     fun stepPosition(direction: Int): SubtitleStyle =
-        copy(positionPercent = (positionNowPercent + direction * POSITION_STEP).coerceIn(0, POSITION_MAX))
+        copy(positionPercent = (positionNowPercent + direction * POSITION_STEP).coerceIn(0, SUBTITLE_POSITION_MAX))
 
     /** Whether there is a box at all. */
     val box: Boolean get() = boxLevel != SubtitleBox.Off
@@ -325,11 +325,11 @@ data class SubtitleStyle(
 
         /** The fine size steps: 50 to 250 per cent of Medium in tens. */
         const val SIZE_MIN = 50
-        const val SIZE_MAX = 250
+        const val SUBTITLE_SIZE_MAX = 250
         const val SIZE_STEP = 10
 
         /** The bottom line's height, 0 to 30 per cent, by two. */
-        const val POSITION_MAX = 30
+        const val SUBTITLE_POSITION_MAX = 30
         const val POSITION_STEP = 2
 
         /**
