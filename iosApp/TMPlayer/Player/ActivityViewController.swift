@@ -160,7 +160,9 @@ final class ActivityViewController: UIViewController {
             NSCoder.string(for: view.bounds.size), NSCoder.string(for: view.window?.bounds.size ?? .zero)
         )
         setNeedsUpdateOfSupportedInterfaceOrientations()
-        setNeedsUpdateOfPrefersInterfaceOrientationLocked()
+        if #available(iOS 16.0, *) {
+            setNeedsUpdateOfPrefersInterfaceOrientationLocked()
+        }
         view.window?.windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: wanted())) { error in
             tmLogWarning("orientation", "%@", error.localizedDescription)
         }
@@ -188,7 +190,9 @@ final class ActivityViewController: UIViewController {
             guard let self else { return }
             tmLog("orientation", "turned to %@, stands as wanted %d", NSCoder.string(for: self.view.bounds.size), self.stands(in: self.wanted()) ? 1 : 0)
             // An iPad turned by hand into a way the activity asks for stays there from now on.
-            self.setNeedsUpdateOfPrefersInterfaceOrientationLocked()
+            if #available(iOS 16.0, *) {
+                self.setNeedsUpdateOfPrefersInterfaceOrientationLocked()
+            }
             guard self.appeared, !self.stands(in: self.wanted()) else { return }
             self.applyOrientations()
         }
