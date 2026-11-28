@@ -4137,7 +4137,7 @@ private fun SubtitleStyleDialog(style: SubtitleStyle, onChange: (SubtitleStyle) 
             ) { onChange(style.stepSize(-1)) }
             ChoiceLine(
                 title = s.subtitlesLarger, detail = fine, icon = TmIcons.Add,
-                enabled = style.fineSizePercent < SubtitleStyle.SIZE_MAX,
+                enabled = style.fineSizePercent < SubtitleStyle.SUBTITLE_SIZE_MAX,
             ) { onChange(style.stepSize(1)) }
             ChoiceSection(s.subtitlesColour)
             com.tmplayer.player.SubtitleColour.entries.forEach { colour ->
@@ -4210,7 +4210,7 @@ private fun SubtitleStyleDialog(style: SubtitleStyle, onChange: (SubtitleStyle) 
             ) { onChange(style.stepPosition(-1)) }
             ChoiceLine(
                 title = s.subtitlesHigher, detail = height, icon = TmIcons.Add,
-                enabled = style.positionNowPercent < SubtitleStyle.POSITION_MAX,
+                enabled = style.positionNowPercent < SubtitleStyle.SUBTITLE_POSITION_MAX,
             ) { onChange(style.stepPosition(1)) }
             // Last, and greyed out (still focusable) while the look is the default one.
             ChoiceLine(
@@ -4339,7 +4339,7 @@ private fun TvSubtitleStyle(style: SubtitleStyle, onChange: (SubtitleStyle) -> U
                         option(s.subtitlesSmaller, null, detail = fine, icon = TmIcons.Remove, enabled = style.fineSizePercent > SubtitleStyle.SIZE_MIN, target = style.sizePercent > 0) {
                             onChange(style.stepSize(-1))
                         }
-                        option(s.subtitlesLarger, null, detail = fine, icon = TmIcons.Add, enabled = style.fineSizePercent < SubtitleStyle.SIZE_MAX) {
+                        option(s.subtitlesLarger, null, detail = fine, icon = TmIcons.Add, enabled = style.fineSizePercent < SubtitleStyle.SUBTITLE_SIZE_MAX) {
                             onChange(style.stepSize(1))
                         }
                     }
@@ -4378,7 +4378,7 @@ private fun TvSubtitleStyle(style: SubtitleStyle, onChange: (SubtitleStyle) -> U
                         option(s.subtitlesLower, null, detail = height, icon = TmIcons.Remove, enabled = style.positionNowPercent > 0, target = style.positionPercent >= 0) {
                             onChange(style.stepPosition(-1))
                         }
-                        option(s.subtitlesHigher, null, detail = height, icon = TmIcons.Add, enabled = style.positionNowPercent < SubtitleStyle.POSITION_MAX) {
+                        option(s.subtitlesHigher, null, detail = height, icon = TmIcons.Add, enabled = style.positionNowPercent < SubtitleStyle.SUBTITLE_POSITION_MAX) {
                             onChange(style.stepPosition(1))
                         }
                     }
