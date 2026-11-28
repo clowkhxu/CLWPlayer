@@ -343,10 +343,10 @@ data class SubtitleStyle(
 
         /** A stored size off the steps (or garbage) is no fine size: the preset stays. */
         fun sanitiseSizePercent(value: Long?): Int =
-            value?.takeIf { it in SIZE_MIN..SIZE_MAX && it % SIZE_STEP == 0L }?.toInt() ?: 0
+            value?.takeIf { it in SIZE_MIN..SUBTITLE_SIZE_MAX && it % SIZE_STEP == 0L }?.toInt() ?: 0
 
         fun sanitisePositionPercent(value: Long?): Int =
-            value?.takeIf { it in 0..POSITION_MAX }?.toInt() ?: -1
+            value?.takeIf { it in 0..SUBTITLE_POSITION_MAX }?.toInt() ?: -1
 
         /** Only a colour of [CUSTOM_COLOURS], stored as its unsigned value, counts; anything else is the preset. */
         fun sanitiseCustomColour(value: Long?): Int {
