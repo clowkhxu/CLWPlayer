@@ -1,0 +1,195 @@
+# What TMPlayer does
+
+The long version of the feature list. For installing it, see [INSTALL.md](../INSTALL.md); for how
+the streaming works, see [ARCHITECTURE.md](ARCHITECTURE.md).
+
+<p align="center">
+  <img src="screenshots/tv-chats.webp" width="90%" alt="Browsing chats on TMPlayer on a television" />
+</p>
+
+**Signs in with a QR code, or with your number.** On a TV: open Telegram on your phone, go to
+Settings, Devices, Link Desktop Device, point it at the screen. No typing an email address with a
+D-pad. On a phone the number comes first, with the country picker and the code boxes Telegram
+itself uses, and the QR route is there for an account that lives on another handset. Two-step
+verification works either way. Once signed in, the setup is one question: "Which chats have your videos?", then Home. It is the chat
+picker (a search box, nothing ticked, Done off until a chat is ticked, Back asks "Leave without choosing?"; with
+no chat holding videos it says to forward a video to Saved Messages). Everything else is decided for you or lives
+in Settings: lighter or full pictures are picked from the device's memory, crash reports are off until you turn
+them on in Settings, and the quick tour is a dismissible Tips card on Home. Settings, Redo setup choices lists
+posters and details, While streaming (Keep video or Save space), full quality or lighter pictures and motion, and
+on a phone whether to save mobile data; it can also ask the one question again.
+
+**Shows media, not messages.** Browse the chats and channels you already have, then see only their
+playable videos. Text messages never appear. Video documents are included too, so an `.mkv` sent
+as a file is not missed.
+
+**Starts fast and seeks properly.** Playback begins while the file is still arriving, and seeking
+re-aims the download rather than waiting for it. This is the whole reason the app exists. Bring the
+controls up and the corner says how much of the video has arrived, and how quickly.
+
+**Back means stop.** On a phone, Back from the player pauses the video, saves where you were,
+releases the player and returns to the page that opened it (there is no in-app mini player bar
+there). Home or the Picture in picture button shrinks the video to a system window, and background
+audio, when it is on, keeps the sound in the notification; Back while casting also stops the TV. The
+desktop keeps its own mini player (Back docks a playing video into a bar, Ctrl+P makes the small
+always on top window).
+
+**Or waits, if your connection would rather.** Settings has a *Download the whole video first*
+switch, off by default. On, the video is fetched in full before it starts, which beats being
+stopped every few minutes on a line that cannot keep up with playback.
+
+**Handles real-world media files.** MKV, MP4, AVI, TS, and the rest. Embedded subtitles,
+including image-based PGS and VobSub, switchable on both a remote and a phone. Multiple audio
+tracks you can switch during playback.
+DTS, TrueHD and E-AC3 decode in software when the stick has no silicon for them, while video stays
+on the hardware decoder.
+
+**Understands episode filenames.** A name carrying `S02E04`, `2x04`, or `Season 2 Episode 4`
+is recognized locally. During playback, previous and next controls move between neighbouring
+episodes already present in the same chat, on a remote and under a thumb alike, and when one
+finishes the next starts on its own after a countdown you can stop. A switch in Settings turns
+that off. A show has what a single video has: put the whole show on Watch later, mark a season or
+the whole show as watched or unwatched (the choice names how many episodes it changes), and go
+to its chat from Home or search. In the apps, hold a show's card (or right click it on the
+desktop) for the same menu.
+
+**Remembers where you stopped.** Every video gets its own saved position. Hold OK in Continue
+watching to forget one, or clear the whole list at once from its heading or from Settings.
+Starring a chat keeps it in Favourites, and the chat you last watched from reopens on launch.
+
+**Caches one video, keeps every download.** An 8 GB stick has no room to keep everything. TMPlayer
+caches the video you are watching and clears the previous one when you play the next, without
+asking. Videos you download, or save to Downloads from the cache, the player or the Downloads
+screen, move into TMPlayer's own Downloads folder and stay until you delete them; the cache never
+touches them. Coming back to a video you stopped half way through keeps the half already on disk
+instead of starting the download again, and backing out of one stops the download rather than
+leaving it running in the background.
+
+**Downloads is a place of its own.** A tab on the phone's bar (Home, Chats, Search, Downloads, with
+the number running on it), a tab on the television's top bar, a button on the desktop's bar (Ctrl+J)
+and, on the web, a page that says downloads are in the app. The page is the running cards (Pause,
+Cancel with Undo on a touch screen) over one list, "On this phone", where what you downloaded and
+what playing left behind ("Auto-saved", with Keep) stand together; Free up space shows only when
+there is something to free. Settings, Downloads and data holds Where to save, On mobile data
+(Ask first, Never, Allow), While streaming, Download the whole video first and Remove after
+watching. Your lists and Settings are behind the gear at the top of Home and of Downloads.
+
+**Is a phone app on a phone.** The same library, drawn the way Android draws things in the hand:
+a Material 3 type scale, full-bleed chat rows, search that expands into the app bar, actions as
+toolbar icons, real switches and dialogs and sheets, a back arrow on every screen, and a player
+that hides the system bars instead of playing underneath them.
+
+**Plays like a phone player.** A big play and pause in the middle with the episode buttons beside
+it, and every control in reach with the phone held either way. Double tap a side to jump (the
+player says so the first time), and keep tapping to go further; hold to play at 2x; drag for brightness, volume or to travel
+through the video, each with its own gauge on screen. A video that opens where you left off offers
+Start over for a few seconds. Lock the screen against a stray thumb, get a
+"Next episode" card in the last half minute, and set how all of it behaves under Settings, Player.
+
+**Stays out of the way.** One layout per page, nothing to set: a chat's videos are a poster
+grid with the name and facts under each, the chat lists and History are rows. Size limits keep a chat full of tiny clips from burying longer videos. A resolution badge on
+each tile and nothing else, because the codec was never going to change anyone's mind. A tile
+cuts a long filename short, so the whole name sits in the bottom corner of the screen for whatever
+the remote is standing on, the way a browser shows the link under the cursor.
+
+**Catches up on demand.** A Refresh button beside every listing, for a video posted while the
+screen was open. Nothing is on a timer: a television that re-fetches by itself is a television
+that moves what you were about to press. Coming back after the TV has been asleep, the app waits
+for Telegram to answer before it says a chat is empty.
+
+**Forgives how you type.** Search is matched word by word rather than as a literal run of
+characters, so an accent nobody types, a swapped pair of letters, or one wrong keyword among right
+ones still finds the thing. Exact matches still come first.
+
+**Finds things by voice.** Press the microphone and say a channel or a file name. It uses the
+microphone already in your remote, or your phone's own dictation, and asks for no permissions to
+do it.
+
+**Keeps itself current.** Shortly after every launch, and every six hours while it runs, it looks
+for a newer release, puts an amber *Update* on the rail and in the drawer when there is one, and
+offers it once in a popup (Update now, Remind me later, Skip this version). It downloads and
+installs it for you, and waits for Wi-Fi when On mobile data is Never. Signing out clears everything it
+ever kept: the Telegram session, your history, favourites, settings, and downloaded media.
+
+<p align="center">
+  <img src="screenshots/tv-settings.webp" width="90%" alt="TMPlayer settings on a television" />
+</p>
+
+The phone gets its own layout out of the same APK: the chat list, then the chat's videos as tiles.
+
+<p align="center">
+  <img src="screenshots/phone.webp" width="80%" alt="TMPlayer on a phone: the chat list beside a chat's videos as a grid" />
+</p>
+
+## On a computer
+
+A desktop app for **Windows 10 and 11**, **64-bit Linux** and **macOS 26 or newer on Apple Silicon**,
+from the same release as the APK.
+It is the same account, the same library and the same streaming, drawn
+for a mouse and a keyboard. How to install it is in [INSTALL.md](../INSTALL.md#installing-tmplayer-on-a-computer).
+
+**Signs in the same way.** A QR code fills the window: Telegram on your phone, Settings, Devices,
+Link Desktop Device. A phone number and two-step verification work too.
+
+**A sidebar and a grid.** Chats, Favourites, Continue, Downloads and Settings down the side above
+a certain width, an icon rail below it. Posters you can make bigger or smaller, a Play button and a
+menu when you hover a tile, and a right click menu to play, play from the start, download, remove
+a download or copy the Telegram link. `/` or `Ctrl+F` searches, `Ctrl+,` opens Settings, and Esc,
+Backspace, Alt+Left and the mouse's back button all go back.
+
+**Plays through mpv.** libmpv and its FFmpeg are bundled, so it opens what the Android app opens,
+MKV, MP4, AVI and TS with image subtitles and DTS, TrueHD and E-AC3, without anything installed
+beside it. It streams while the file arrives and seeks without waiting, exactly as the television
+does, and picks up where you stopped, offers the next episode near the end, and keeps your audio
+and subtitle choice for the rest of a series.
+
+**A keyboard you already know.** YouTube's letters, with mpv's and VLC's punctuation as aliases:
+Space or K to pause, arrows for 5 seconds and volume, J and L for 10, Shift with an arrow for a
+minute, 0 to 9 to jump through the video, F for fullscreen, S and A for subtitles and audio, `]`
+and `[` for speed, Shift+N and Shift+P for episodes. A single click pauses, a double click goes
+fullscreen, the wheel sets the volume. The whole table is in
+[INSTALL.md](../INSTALL.md#using-the-keyboard-and-mouse).
+
+**Behaves like a desktop app.** Keeps the screen awake while a video plays, answers the media keys
+(and the desktop's own media controls: MPRIS on Linux, the media flyout by the volume control on
+Windows, Now Playing on a Mac; each shows the video's length and position and follows its speed), remembers its window size and
+place, and opening it a second time brings the first window forward. Downloads stay on the
+computer until you remove them, on their own page.
+
+**Back leaves the video.** Back (Esc, Backspace, Alt+Left, the mouse's back button) stops the video, keeps
+your place and returns to the page that opened it, as on the phone. There is no bar that keeps a video
+playing over a page. Ctrl+P is a different thing: it shrinks the window to a small always on top picture in
+a corner of the screen and brings it back. `?` lists every key.
+
+**Quiet loud scenes.** One switch in the player menu, off until you turn it on, remembered. On Android and
+Android TV it squeezes the loudest scenes down and lifts quiet speech. On the computer the bundled FFmpeg
+has no compressor (only `aformat`, `anull` and `aresample`, checked 2026-11-16), so it uses the track's own
+Dolby range control and a clearer speech channel on a surround fold; its detail line in Playback details
+says so. The web app has no audio chain and does not offer it.
+
+**Pure black and a clock.** Appearance has a Pure black switch under the theme (System and Dark, phone, TV,
+computer, web) for OLED screens. The television's controls show the time of day in the top corner for as
+long as a video is paused; the end time of a video is not shown (removed on purpose in 1.16.0).
+
+**Updates itself.** Shortly after every launch, and every six hours while it runs, it looks for a
+newer release; when there is one, an amber *Update* item joins the side bar and a popup offers it
+once (Settings can turn the check off). Update now downloads the package that matches the install (the MSI or
+the AppImage), checks it against the release checksums, installs it and restarts. The tarball
+and the macOS DMG open the release page: download the new one and put it over the old copy. The
+Windows portable zip, the deb, the rpm and the Flatpak are no longer
+published: a copy from one of them still hears of each release and opens the release page. The
+popup's own wording for them (the format is gone, take the MSI or the AppImage) is in the code for
+any such build that runs it, but the copies already out there are 1.21.0 or older and do not.
+
+**What it does not do yet.** No voice search (there is no portable speech API). Windows builds are
+not signed yet, so SmartScreen warns when the MSI is opened from a browser download; the
+PowerShell line (`irm https://tmplayer.org/install.ps1 | iex`) installs it with no warning.
+
+## What it is not
+
+It hosts nothing, indexes nothing and uploads nothing. There is no server, no bot, and no account
+except your own. It shows you media from chats you already joined, and what you do with that is
+your responsibility.
+
+It is also not a general Telegram client. You cannot read messages, reply, or send anything. It
+plays videos, and that is all it does.

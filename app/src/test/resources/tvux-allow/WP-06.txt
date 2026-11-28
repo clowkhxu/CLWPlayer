@@ -1,0 +1,11 @@
+# WP-06: TV Settings rows: ring, honest roles, rows that keep focus and never shift.
+# Known failures of the tv-ux-review suite (WP-16) this package fixes; delete each line as it is fixed.
+# screen | rule | node | reason
+settings:SetupChoices | targets | Also in Home and library | WP-06 TV Settings rows
+settings:Storage | focusContrast | stream-switch | WP-06 TV Settings rows
+settings:Storage | labelled | stream-switch | WP-06 TV Settings rows
+settings:Notifications | focusContrast | stream-switch | WP-06 the two-way switch (TabSwitch) has a 35 percent fill and no name: the final TV review F-08 gives it a name and the shared focus look
+settings:Troubleshooting | focusContrast | stream-switch | WP-06 same as Notifications (final TV review F-08)
+settings:SetupChoices | labelled | unnamed node at 318,269 dp | WP-06 the setup storage switch (SegmentedChoiceRow) has no name or role: final TV review F-08 names it
+
+# The Typeface stepper sits in the bottom margin where the page scrolls to it (a scrolling row, as WP-04's lines above).

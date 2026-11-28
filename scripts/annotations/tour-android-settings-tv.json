@@ -1,0 +1,53 @@
+{
+  "source": "tvt-settings.png",
+  "output": "app/src/main/res/drawable-nodpi/tour_settings_tv.webp",
+  "crop": [
+    0,
+    0,
+    1920,
+    1080
+  ],
+  "width": 1280,
+  "marks": [
+    {
+      "type": "circle",
+      "box": [
+        116,
+        262,
+        260,
+        64
+      ],
+      "seed": 98
+    },
+    {
+      "type": "circle",
+      "box": [
+        116,
+        454,
+        400,
+        64
+      ],
+      "seed": 99
+    },
+    {
+      "type": "circle",
+      "box": [
+        116,
+        742,
+        320,
+        64
+      ],
+      "seed": 100
+    },
+    {
+      "type": "circle",
+      "box": [
+        116,
+        550,
+        420,
+        64
+      ],
+      "seed": 101
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "source": "tvt-chats.png",
+  "output": "app/src/main/res/drawable-nodpi/tour_videos_tv.webp",
+  "crop": [
+    0,
+    0,
+    1920,
+    1080
+  ],
+  "width": 1280,
+  "marks": [
+    {
+      "type": "circle",
+      "box": [
+        200,
+        462,
+        1130,
+        66
+      ],
+      "seed": 81
+    },
+    {
+      "type": "circle",
+      "box": [
+        110,
+        568,
+        800,
+        150
+      ],
+      "seed": 82
+    },
+    {
+      "type": "circle",
+      "box": [
+        150,
+        198,
+        520,
+        80
+      ],
+      "seed": 83
+    }
+  ]
+}

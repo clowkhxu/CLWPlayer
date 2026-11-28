@@ -1,0 +1,4 @@
+# WP-90: TalkBack on TV: every focusable named, with a role.
+# Known failures of the tv-ux-review suite (WP-16) this package fixes; delete each line as it is fixed.
+# screen | rule | node | reason
+playerRow | labelled | unnamed HorizontalScrollView | WP-90 TalkBack on TV

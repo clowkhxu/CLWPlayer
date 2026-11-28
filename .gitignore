@@ -1,0 +1,45 @@
+# Gradle
+.gradle/
+build/
+app/build/
+
+# Local machine config + secrets (Telegram api_id/api_hash live here)
+local.properties
+
+# Signing
+*.keystore
+*.jks
+keystore.properties
+# Release files built and signed here (scripts/release-local.sh)
+/dist/local-release/
+
+# IDE
+.idea/
+*.iml
+.kotlin/
+
+# Misc
+captures/
+# Packages from scripts/linux-local.sh and scripts/windows-vm (CI writes the same folder)
+/dist/
+.DS_Store
+
+# Python bytecode from the scripts in scripts/
+__pycache__/
+/promo-art-src/
+
+# Astro site build
+site/dist/
+site/node_modules/
+site/.astro/
+
+# Working notes kept off GitHub (plan, SEO and outreach)
+private/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+.pnpm-store/

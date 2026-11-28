@@ -1,0 +1,2 @@
+# WP-04: TV text floor: 14 sp everywhere, one type scale.
+# Known failures of the tv-ux-review suite (WP-16) this package fixes; delete each line as it is fixed.

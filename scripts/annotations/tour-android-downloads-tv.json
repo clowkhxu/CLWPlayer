@@ -1,0 +1,43 @@
+{
+  "source": "tvt-downloads.png",
+  "output": "app/src/main/res/drawable-nodpi/tour_downloads_tv.webp",
+  "crop": [
+    0,
+    0,
+    1920,
+    1440
+  ],
+  "width": 1280,
+  "marks": [
+    {
+      "type": "circle",
+      "box": [
+        290,
+        1030,
+        640,
+        150
+      ],
+      "seed": 93
+    },
+    {
+      "type": "circle",
+      "box": [
+        430,
+        300,
+        420,
+        116
+      ],
+      "seed": 94
+    },
+    {
+      "type": "circle",
+      "box": [
+        110,
+        476,
+        700,
+        164
+      ],
+      "seed": 95
+    }
+  ]
+}
